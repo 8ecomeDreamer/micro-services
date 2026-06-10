@@ -6,11 +6,15 @@
 *.iws
 *.ipr
 out/
+target/
 
 # OS
 
 # Logs
 
+# nginx
+nginx*/
+
 # Nacos (如果不需要上传 Nacos 服务器)
 nacos/
-target/
+nacos-server-*/

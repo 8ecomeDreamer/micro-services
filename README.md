@@ -5,7 +5,7 @@
 2. 配置集群前缀是discovery，注意不要误用config，全称：spring.cloud.nacos.discovery.cluster-name
 
 ### 总结
-- Nacos的服务实例分为两种l类型：
+- Nacos的服务实例分为两种类型：
   - 临时实例：如果实例宕机超过一定时间，会从服务列表剔除，默认的类型。
   - 非临时实例：如果实例宕机，不会从服务列表剔除，也可以叫永久实例。
   
