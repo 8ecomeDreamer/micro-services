@@ -5,7 +5,6 @@ import cn.itcast.order.pojo.Order;
 import cn.itcast.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
@@ -15,8 +14,11 @@ public class OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
+//    @Resource
+//    private RestTemplate restTemplate;
+
     @Resource
-    private RestTemplate restTemplate;
+    private UserClient userClient;
 
     public Order queryOrderById(Long orderId) {
         // 1.查询订单
@@ -27,8 +29,13 @@ public class OrderService {
 ////        String url = "http://user-service/user/" + order.getUserId();
 //        // 2.2 发起调用
 //        User user = restTemplate.getForObject(url, User.class);
-//        // 3. 存入order表
-//        order.setUser(user);
+
+        //        2.利用feign发起http请求，查询用户
+        User user = userClient.findById(order.getUserId());
+
+        // 3. 存入order表
+        order.setUser(user);
+
         // 4.返回
         return order;
     }

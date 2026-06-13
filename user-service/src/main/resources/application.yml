@@ -10,11 +10,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
-      server-addr: localhost:8848
+      server-addr: localhost:8848, localhost:8845, localhost:8851
       discovery:
         cluster-name: SD
         weight: 200  # 设置权重值，范围 1-100
-        namespace: be416c00-4d7e-400a-88d7-bd039296d77b
+#        namespace: be416c00-4d7e-400a-88d7-bd039296d77b
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
