@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@EnableFeignClients(basePackages = "cn.itcast.order.service")
+@EnableFeignClients(basePackages = "cn.itcast.feignApi.clients")
 @MapperScan("cn.itcast.order.mapper")
 @SpringBootApplication
 public class OrderApplication {
