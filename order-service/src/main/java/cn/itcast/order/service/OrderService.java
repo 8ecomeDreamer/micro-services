@@ -1,8 +1,9 @@
 package cn.itcast.order.service;
 
+import cn.itcast.feignApi.clients.UserClient;
+import cn.itcast.feignApi.pojo.User;
 import cn.itcast.order.mapper.OrderMapper;
 import cn.itcast.order.pojo.Order;
-import cn.itcast.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
